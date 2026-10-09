@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Swara is a software engineer with six months of experience at Tops Technologies and a foundation in web development and C/C++."
+    />
+    <meta name="theme-color" content="#11110f" />
+    <title>Swara — Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-ink: #11110f;
+        --color-paper: #f3f0e8;
+        --color-muted: #a6a49d;
+        --color-lime: #d5fb69;
+        --color-lilac: #b6a3ff;
+        --font-sans: "DM Sans", sans-serif;
+        --font-display: "Space Grotesk", sans-serif;
+        --font-mono: "DM Mono", monospace;
+      }
+    </style>
+    <style>
+      :root {
+        color-scheme: dark;
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+
+      body {
+        margin: 0;
+        background: #11110f;
+        color: #f3f0e8;
+        font-family: "DM Sans", sans-serif;
+      }
+
+      ::selection {
+        background: #d5fb69;
+        color: #11110f;
+      }
+
+      .grid-bg {
+        background-image:
+          linear-gradient(rgba(243, 240, 232, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(243, 240, 232, 0.035) 1px, transparent 1px);
+        background-size: 54px 54px;
+      }
+
+      .hero-orb {
+        background:
+          radial-gradient(circle at 35% 35%, rgba(213, 251, 105, 0.2), transparent 33%),
+          radial-gradient(circle at 70% 70%, rgba(182, 163, 255, 0.22), transparent 38%);
+        filter: blur(2px);
+      }
+
+      .outline-text {
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(243, 240, 232, 0.27);
+      }
+
+      .project-card:hover .project-arrow {
+        transform: translate(4px, -4px);
+        background: #d5fb69;
+        color: #11110f;
+      }
+
+      .project-arrow {
+        transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+      }
+
+      .skill-pill {
+        transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+      }
+
+      .skill-pill:hover {
+        color: #d5fb69;
+        border-color: rgba(213, 251, 105, 0.55);
+        background: rgba(213, 251, 105, 0.06);
+      }
+
+      .menu-open {
+        display: flex !important;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8"
+        aria-label="Main navigation"
+      >
+        <a href="#home" class="font-display text-xl font-bold tracking-tight" aria-label="Swara, home">
+          swara<span class="text-lime">.</span>
+        </a>
+        <button
+          id="menu-toggle"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-paper md:hidden"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-menu"
+          aria-label="Open navigation menu"
+        >
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div
+          id="main-menu"
+          class="absolute left-0 right-0 top-full hidden flex-col gap-1 border-b border-white/10 bg-ink px-5 pb-5 pt-3 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
+        >
+          <a class="menu-link py-2 text-sm text-muted transition hover:text-paper" href="#about">About</a>
+          <a class="menu-link py-2 text-sm text-muted transition hover:text-paper" href="#skills">Skills</a>
+          <a class="menu-link py-2 text-sm text-muted transition hover:text-paper" href="#work">Work</a>
+          <a
+            class="menu-link mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-lime px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-white md:mt-0"
+            href="#contact"
+          >
+            Let’s talk <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="grid-bg relative flex min-h-screen items-center overflow-hidden pt-24">
+        <div class="hero-orb pointer-events-none absolute inset-0" aria-hidden="true"></div>
+        <div class="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16 lg:py-20">
+          <div class="relative z-10">
+            <p class="mb-7 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-muted" data-aos="fade-up">
+              <span class="h-px w-8 bg-lime"></span>
+              Software engineer · India
+            </p>
+            <h1 class="font-display text-6xl font-semibold leading-[0.98] tracking-[-0.065em] sm:text-7xl lg:text-[6.8rem]" data-aos="fade-up" data-aos-delay="100">
+              Hello, I’m<br />
+              <span class="text-lime">Swara</span><span class="text-lilac">.</span>
+            </h1>
+            <p class="mt-7 max-w-xl text-lg leading-8 text-muted sm:text-xl" data-aos="fade-up" data-aos-delay="200">
+              I’m an aspiring software engineer who enjoys turning ideas into clean, thoughtful digital experiences.
+            </p>
+            <div class="mt-9 flex flex-wrap items-center gap-4" data-aos="fade-up" data-aos-delay="300">
+              <a href="#work" class="inline-flex items-center gap-3 rounded-full bg-lime px-6 py-3.5 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
+                Explore my work <span aria-hidden="true">↘</span>
+              </a>
+              <a href="#about" class="inline-flex items-center gap-2 px-4 py-3.5 text-sm font-medium text-paper transition hover:text-lime">
+                More about me <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+            <div class="mt-14 flex items-center gap-4 text-xs text-muted" data-aos="fade-up" data-aos-delay="400">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime opacity-50"></span>
+                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-lime"></span>
+              </span>
+              Open to learning & new opportunities
+            </div>
+          </div>
+
+          <div class="relative mx-auto w-full max-w-[420px]" data-aos="zoom-in" data-aos-delay="150">
+            <div class="absolute -right-3 -top-3 h-full w-full rounded-[2rem] border border-lilac/40 sm:-right-5 sm:-top-5"></div>
+            <div class="grid-bg relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#1a1a17] p-7 sm:p-9">
+              <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-lime/10 blur-3xl" aria-hidden="true"></div>
+              <div class="relative flex items-center justify-between">
+                <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">A little about me</span>
+                <span class="rounded-full border border-lime/30 px-3 py-1 font-mono text-[10px] text-lime">01 / 01</span>
+              </div>
+              <div class="relative my-12 flex aspect-square items-center justify-center">
+                <div class="absolute h-[80%] w-[80%] rounded-full border border-white/10"></div>
+                <div class="absolute h-[61%] w-[61%] rounded-full border border-dashed border-lilac/40"></div>
+                <div class="absolute h-[43%] w-[43%] rounded-full bg-gradient-to-br from-lime via-[#b9e78c] to-lilac opacity-90 blur-[1px]"></div>
+                <span class="relative font-display text-[7rem] font-semibold tracking-[-0.1em] text-ink sm:text-[8rem]">S<span class="text-white/80">.</span></span>
+                <span class="absolute right-[9%] top-[16%] h-3 w-3 rounded-full bg-lilac shadow-[0_0_22px_#b6a3ff]"></span>
+                <span class="absolute bottom-[15%] left-[7%] h-2 w-2 rounded-full bg-lime shadow-[0_0_20px_#d5fb69]"></span>
+                <span class="absolute bottom-[12%] right-[16%] rotate-12 rounded-full border border-white/15 bg-ink/80 px-3 py-2 font-mono text-[10px] text-paper">curious by design</span>
+              </div>
+              <div class="relative flex items-end justify-between border-t border-white/10 pt-5">
+                <div>
+                  <p class="font-display text-xl font-semibold">Building my next chapter.</p>
+                  <p class="mt-1 text-sm text-muted">One idea, one line at a time.</p>
+                </div>
+                <span class="font-mono text-xs text-lilac">✳</span>
+              </div>
+            </div>
+            <div class="absolute -bottom-7 -left-4 rounded-2xl border border-white/10 bg-[#1a1a17] px-4 py-3 shadow-2xl sm:-left-8" data-aos="fade-right" data-aos-delay="450">
+              <p class="font-mono text-[10px] uppercase tracking-widest text-muted">Experience</p>
+              <p class="mt-1 font-display text-lg font-semibold"><span class="text-lime">06</span> months</p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-7 right-8 hidden font-mono text-[10px] uppercase tracking-[0.2em] text-muted [writing-mode:vertical-rl] lg:block">Scroll to explore</div>
+      </section>
+
+      <section id="about" class="border-t border-white/10">
+        <div class="mx-auto grid max-w-7xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24 lg:py-32">
+          <div data-aos="fade-up">
+            <p class="font-mono text-xs uppercase tracking-[0.2em] text-lilac">01 — The introduction</p>
+            <h2 class="mt-5 font-display text-4xl font-semibold tracking-tight sm:text-5xl">A little about<br /><span class="outline-text">my journey.</span></h2>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="120">
+            <p class="text-xl leading-9 text-paper sm:text-2xl sm:leading-10">
+              I’m building a strong foundation in software engineering, with a curiosity for both how things work and how they feel to use.
+            </p>
+            <p class="mt-6 max-w-2xl leading-8 text-muted">
+              I have six months of experience with <span class="font-medium text-paper">Tops Technologies Pvt. Ltd.</span> I’ve been learning to create responsive web pages with HTML, CSS, and Bootstrap, while developing programming fundamentals with C and C++.
+            </p>
+            <div class="mt-9 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
+                <span class="font-mono text-xs text-lime">01 / EXPERIENCE</span>
+                <p class="mt-3 font-display text-lg font-semibold">Tops Technologies</p>
+                <p class="mt-1 text-sm text-muted">6 months · Software engineering</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
+                <span class="font-mono text-xs text-lilac">02 / APPROACH</span>
+                <p class="mt-3 font-display text-lg font-semibold">Learn by building</p>
+                <p class="mt-1 text-sm text-muted">Curious, consistent, and growing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="border-t border-white/10 bg-[#171715]">
+        <div class="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
+          <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end" data-aos="fade-up">
+            <div>
+              <p class="font-mono text-xs uppercase tracking-[0.2em] text-lilac">02 — My toolkit</p>
+              <h2 class="mt-5 font-display text-4xl font-semibold tracking-tight sm:text-5xl">Tools I’m growing with<span class="text-lime">.</span></h2>
+            </div>
+            <p class="max-w-sm leading-7 text-muted">A practical foundation in web development and programming, with plenty more to explore.</p>
+          </div>
+          <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-pill rounded-2xl border border-white/10 p-6">
+              <span class="font-mono text-xs text-muted">01</span>
+              <h3 class="mt-7 font-display text-2xl font-semibold">HTML</h3>
+              <p class="mt-2 text-sm text-muted">Semantic structure & accessible pages</p>
+            </div>
+            <div class="skill-pill rounded-2xl border border-white/10 p-6">
+              <span class="font-mono text-xs text-muted">02</span>
+              <h3 class="mt-7 font-display text-2xl font-semibold">CSS</h3>
+              <p class="mt-2 text-sm text-muted">Responsive layouts & visual styling</p>
+            </div>
+            <div class="skill-pill rounded-2xl border border-white/10 p-6">
+              <span class="font-mono text-xs text-muted">03</span>
+              <h3 class="mt-7 font-display text-2xl font-semibold">Bootstrap</h3>
+              <p class="mt-2 text-sm text-muted">Rapid, mobile-first UI development</p>
+            </div>
+            <div class="skill-pill rounded-2xl border border-white/10 p-6">
+              <span class="font-mono text-xs text-muted">04</span>
+              <h3 class="mt-7 font-display text-2xl font-semibold">Tailwind CSS</h3>
+              <p class="mt-2 text-sm text-muted">Utility-first styling · version 4</p>
+            </div>
+            <div class="skill-pill rounded-2xl border border-white/10 p-6">
+              <span class="font-mono text-xs text-muted">05</span>
+              <h3 class="mt-7 font-display text-2xl font-semibold">C</h3>
+              <p class="mt-2 text-sm text-muted">Programming fundamentals & logic</p>
+            </div>
+            <div class="skill-pill rounded-2xl border border-white/10 p-6">
+              <span class="font-mono text-xs text-muted">06</span>
+              <h3 class="mt-7 font-display text-2xl font-semibold">C++</h3>
+              <p class="mt-2 text-sm text-muted">Core concepts & problem solving</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="border-t border-white/10">
+        <div class="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
+          <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end" data-aos="fade-up">
+            <div>
+              <p class="font-mono text-xs uppercase tracking-[0.2em] text-lilac">03 — Selected projects</p>
+              <h2 class="mt-5 font-display text-4xl font-semibold tracking-tight sm:text-5xl">Ideas into interfaces<span class="text-lime">.</span></h2>
+            </div>
+            <p class="max-w-sm leading-7 text-muted">A snapshot of the kinds of things I enjoy learning to build.</p>
+          </div>
+          <div class="mt-12 grid gap-5 lg:grid-cols-2">
+            <article class="project-card group overflow-hidden rounded-3xl border border-white/10 bg-[#1a1a17]" data-aos="fade-up">
+              <div class="relative flex min-h-64 items-center justify-center overflow-hidden bg-[#d9f58c] p-8">
+                <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(#202018 1px, transparent 1px); background-size: 18px 18px;" aria-hidden="true"></div>
+                <div class="relative w-full max-w-sm rotate-[-2deg] rounded-2xl border border-black/10 bg-[#f7f6ef] p-5 text-[#161612] shadow-2xl transition duration-300 group-hover:rotate-0">
+                  <div class="flex items-center justify-between border-b border-black/10 pb-3">
+                    <span class="font-display text-sm font-bold">studio<span class="text-[#8ea946]">/</span></span>
+                    <span class="flex gap-1"><i class="h-1.5 w-1.5 rounded-full bg-[#b7a3ff]"></i><i class="h-1.5 w-1.5 rounded-full bg-[#eaa881]"></i><i class="h-1.5 w-1.5 rounded-full bg-[#8ea946]"></i></span>
+                  </div>
+                  <div class="py-7">
+                    <p class="font-mono text-[9px] uppercase tracking-widest text-black/50">A responsive web concept</p>
+                    <p class="mt-3 font-display text-3xl font-semibold leading-none">Make room<br />for <span class="text-[#809b37]">good ideas.</span></p>
+                    <div class="mt-5 h-20 rounded-xl bg-gradient-to-br from-[#c6d8a2] via-[#e6c6a5] to-[#aca1d1]"></div>
+                  </div>
+                </div>
+                <span class="absolute right-5 top-5 rounded-full bg-black/10 px-3 py-1 font-mono text-[10px] text-[#161612]">01</span>
+              </div>
+              <div class="flex items-start justify-between gap-5 p-6 sm:p-7">
+                <div>
+                  <p class="font-mono text-[10px] uppercase tracking-widest text-lime">Web design · practice concept</p>
+                  <h3 class="mt-2 font-display text-xl font-semibold">Creative studio landing page</h3>
+                  <p class="mt-2 max-w-md text-sm leading-6 text-muted">A responsive landing-page concept focused on clear content and a playful visual identity.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] text-muted">HTML</span>
+                    <span class="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] text-muted">CSS</span>
+                    <span class="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] text-muted">Responsive</span>
+                  </div>
+                </div>
+                <span class="project-arrow flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 text-lg text-paper" aria-hidden="true">↗</span>
+              </div>
+            </article>
+            <article class="project-card group overflow-hidden rounded-3xl border border-white/10 bg-[#1a1a17]" data-aos="fade-up" data-aos-delay="100">
+              <div class="relative flex min-h-64 items-center justify-center overflow-hidden bg-[#bcb0fa] p-8">
+                <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(45deg, #171613 1px, transparent 1px), linear-gradient(-45deg, #171613 1px, transparent 1px); background-size: 24px 24px;" aria-hidden="true"></div>
+                <div class="relative w-full max-w-sm rounded-2xl border border-white/40 bg-[#22211e] p-5 shadow-2xl transition duration-300 group-hover:-translate-y-1">
+                  <div class="flex items-center gap-2 border-b border-white/10 pb-3">
+                    <span class="h-2 w-2 rounded-full bg-lime"></span>
+                    <span class="font-mono text-[10px] text-white/50">learning-log.cpp</span>
+                  </div>
+                  <div class="space-y-3 py-5 font-mono text-xs">
+                    <p><span class="text-lilac">#include</span> <span class="text-lime">&lt;iostream&gt;</span></p>
+                    <p class="text-white/45">// small steps, every day</p>
+                    <p><span class="text-lilac">int</span> <span class="text-[#f5cb91]">main</span>() {</p>
+                    <p class="pl-5 text-white/80">keep_learning<span class="text-lime">();</span></p>
+                    <p><span class="text-white/80">}</span><span class="ml-1 inline-block h-3 w-1.5 animate-pulse bg-lime align-middle"></span></p>
+                  </div>
+                </div>
+                <span class="absolute right-5 top-5 rounded-full bg-black/10 px-3 py-1 font-mono text-[10px] text-[#171613]">02</span>
+              </div>
+              <div class="flex items-start justify-between gap-5 p-6 sm:p-7">
+                <div>
+                  <p class="font-mono text-[10px] uppercase tracking-widest text-lilac">Programming · learning journey</p>
+                  <h3 class="mt-2 font-display text-xl font-semibold">C & C++ practice log</h3>
+                  <p class="mt-2 max-w-md text-sm leading-6 text-muted">A growing collection of exercises for strengthening programming fundamentals and problem-solving habits.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] text-muted">C</span>
+                    <span class="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] text-muted">C++</span>
+                    <span class="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] text-muted">Practice</span>
+                  </div>
+                </div>
+                <span class="project-arrow flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 text-lg text-paper" aria-hidden="true">↗</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="relative overflow-hidden border-t border-white/10">
+        <div class="hero-orb pointer-events-none absolute inset-0 opacity-70" aria-hidden="true"></div>
+        <div class="relative mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
+          <div class="max-w-3xl" data-aos="fade-up">
+            <p class="font-mono text-xs uppercase tracking-[0.2em] text-lilac">04 — What’s next?</p>
+            <h2 class="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-[-0.05em] sm:text-7xl">
+              Good things start<br />with a <span class="text-lime">hello.</span>
+            </h2>
+            <p class="mt-6 max-w-xl text-lg leading-8 text-muted">Have an opportunity, a project idea, or a useful bit of advice? I’d love to hear from you.</p>
+            <a
+              href="mailto:?subject=Hello%20Swara"
+              class="mt-9 inline-flex items-center gap-4 rounded-full bg-lime px-7 py-4 font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white"
+            >
+              Get in touch <span class="text-lg" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <a href="#home" class="font-display text-base font-bold text-paper">swara<span class="text-lime">.</span></a>
+        <p>Made with curiosity, care & a little bit of code.</p>
+        <p>© <span id="year"></span> Swara</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 750,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 70,
+        disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      });
+
+      const menuToggle = document.querySelector("#menu-toggle");
+      const mainMenu = document.querySelector("#main-menu");
+
+      menuToggle.addEventListener("click", () => {
+        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+        menuToggle.setAttribute("aria-label", isExpanded ? "Open navigation menu" : "Close navigation menu");
+        mainMenu.classList.toggle("menu-open", !isExpanded);
+      });
+
+      document.querySelectorAll(".menu-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Open navigation menu");
+          mainMenu.classList.remove("menu-open");
+        });
+      });
+
+      document.querySelector("#year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
